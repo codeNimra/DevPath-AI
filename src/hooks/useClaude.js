@@ -1,19 +1,3 @@
-/**
- * useClaude.js
- * ─────────────────────────────────────────────────────────────
- * Custom hook that wraps Claude API calls with loading, error,
- * and result state. Every page uses this hook instead of
- * calling the API directly, keeping components clean.
- *
- * Exports:
- *   ask(prompt, system?)  — single-turn call
- *   chat(messages, system?) — multi-turn call
- *   loading, error, result  — reactive state
- *   reset()               — clear all state
- *   cancel()              — abort in-flight request
- * ─────────────────────────────────────────────────────────────
- */
-
 import { useState, useCallback, useRef } from 'react';
 import { useApp }                        from '../context/AppContext';
 import { askClaude, callClaude }         from '../utils/claudeApi';
