@@ -1,0 +1,45 @@
+/* GoalSetup.css */
+.gs-page { max-width: 680px; }
+
+/* Steps */
+.gs-steps     { display:flex; align-items:center; margin-bottom:var(--sp-8); }
+.gs-step-wrap { display:flex; align-items:center; flex:1; }
+.gs-step      { display:flex; align-items:center; gap:var(--sp-2); }
+
+.gs-step-num {
+  width:28px; height:28px; border-radius:50%;
+  border:2px solid var(--border-default);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--w-bold);
+  color:var(--text-muted); flex-shrink:0;
+  transition: all var(--t-normal);
+}
+.gs-active .gs-step-num { border-color:var(--cyan); color:var(--cyan); background:rgba(0,229,255,0.10); box-shadow:0 0 10px rgba(0,229,255,0.30); }
+.gs-done   .gs-step-num { border-color:var(--emerald); color:var(--emerald); background:rgba(0,240,160,0.10); }
+
+.gs-step-label { font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--w-bold); text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); transition:color var(--t-normal); }
+.gs-active .gs-step-label { color:var(--text-primary); }
+.gs-done   .gs-step-label { color:var(--emerald); }
+
+.gs-connector      { flex:1; height:1px; background:var(--border-default); margin:0 var(--sp-2); transition:background var(--t-normal); }
+.gs-connector-done { background:var(--emerald); }
+
+/* Form */
+.gs-section-title { font-size:var(--text-xl); font-weight:var(--w-black); color:var(--text-primary); margin-bottom:var(--sp-2); letter-spacing:-0.02em; }
+.gs-subtitle      { font-size:var(--text-sm); color:var(--text-secondary); margin-bottom:var(--sp-5); line-height:var(--lh-snug); }
+.gs-form          { display:flex; flex-direction:column; gap:var(--sp-5); margin-bottom:var(--sp-6); }
+
+/* Skills */
+.gs-skills-grid { display:flex; flex-wrap:wrap; gap:var(--sp-2); margin-bottom:var(--sp-3); }
+.gs-skill {
+  padding:5px 12px; border-radius:var(--r-pill);
+  border:1px solid var(--border-default); background:var(--bg-surface);
+  color:var(--text-secondary); font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--w-bold);
+  cursor:pointer; transition: all var(--t-fast);
+}
+.gs-skill:hover  { border-color:var(--border-strong); color:var(--text-primary); }
+.gs-skill-on     { background:rgba(0,229,255,0.10); border-color:var(--cyan); color:var(--cyan); box-shadow:0 0 7px rgba(0,229,255,0.15); }
+
+/* Actions */
+.gs-actions     { display:flex; justify-content:flex-end; gap:var(--sp-3); flex-wrap:wrap; }
+.gs-actions-top { margin-top:var(--sp-5); }
