@@ -1,0 +1,85 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid transparent;
+  border-radius: var(--r-md);
+  font-family: var(--font-mono);
+  font-weight: var(--w-bold);
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    background-color var(--t-fast),
+    border-color     var(--t-fast),
+    box-shadow       var(--t-fast),
+    transform        var(--t-fast),
+    opacity          var(--t-fast);
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn:active:not(:disabled) { transform: scale(0.96); }
+.btn:disabled               { opacity: 0.42; cursor: not-allowed; }
+
+/* ── Sizes ── */
+.btn-sm  { padding: 5px 11px;  font-size: var(--text-xs); }
+.btn-md  { padding: 9px 17px;  font-size: var(--text-sm); }
+.btn-lg  { padding: 12px 22px; font-size: var(--text-base); }
+.btn-full { width: 100%; }
+
+/* ── Variants ── */
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--text-on-accent);
+}
+.btn-primary:hover:not(:disabled) { box-shadow: var(--glow-cyan); opacity: 0.9; }
+
+.btn-brand {
+  background: var(--gradient-brand);
+  border: none;
+  color: #fff;
+}
+.btn-brand:hover:not(:disabled) { box-shadow: var(--glow-cyan); opacity: 0.88; }
+
+.btn-secondary {
+  background: var(--bg-surface);
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.btn-danger {
+  background: transparent;
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+.btn-danger:hover:not(:disabled) { background: rgba(255,68,102,0.08); }
+
+.btn-icon { display: flex; align-items: center; font-size: 1.05em; line-height: 1; flex-shrink: 0; }
+
+.btn-spinner {
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}

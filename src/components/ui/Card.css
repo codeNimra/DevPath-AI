@@ -1,0 +1,43 @@
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--t-normal), box-shadow var(--t-normal), transform var(--t-normal);
+}
+
+/* Padding */
+.card-pad-none { padding: 0; }
+.card-pad-sm   { padding: var(--sp-4); }
+.card-pad-md   { padding: var(--sp-6); }
+.card-pad-lg   { padding: var(--sp-8); }
+
+/* Variants */
+.card-accent {
+  border-color: var(--border-accent);
+  background: linear-gradient(135deg, rgba(0,229,255,0.06), rgba(123,110,255,0.06));
+}
+.card-flat   { background: var(--bg-surface); box-shadow: none; border-color: var(--border-faint); }
+.card-glass  { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); }
+
+/* States */
+.card-hover:hover    { border-color: var(--border-default); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.card-glow           { border-color: var(--border-accent); box-shadow: var(--shadow-card), var(--glow-cyan); }
+.card-clickable      { cursor: pointer; }
+.card-clickable:active { transform: scale(0.99); }
+
+/* Compound slots */
+.card-header {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3);
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--sp-5);
+}
+.card-footer {
+  display: flex; align-items: center; justify-content: flex-end; gap: var(--sp-3);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border-subtle);
+  margin-top: var(--sp-5);
+}
