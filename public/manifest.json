@@ -1,0 +1,10 @@
+{
+  "name": "DevPath AI",
+  "short_name": "DevPath",
+  "description": "AI-powered developer career navigator",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0C12",
+  "theme_color": "#00E5FF",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
