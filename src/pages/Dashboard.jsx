@@ -20,12 +20,12 @@ const ACTIONS = [
 export default function Dashboard() {
   const { navigate, profile, stats, hasKey } = useApp();
   const { ask, loading, result, error }       = useClaude();
-  const [briefLoaded, setBriefLoaded]         = useState(false);
+  // FIX: useRef avoids stale closure bug — brief fires exactly once per mount
+  const briefRequested = useRef(false);
 
-  /* Auto-load daily brief on first visit if profile is set */
   useEffect(() => {
-    if (hasKey && profile.setupDone && !briefLoaded && !result) {
-      setBriefLoaded(true);
+    if (hasKey && profile.setupDone && !briefRequested.current) {
+      briefRequested.current = true;
       ask(
         `Write a punchy 3-sentence developer motivational brief for ${profile.name || 'a developer'} working toward ${profile.goal || 'becoming a developer'}. End with one micro-task they can complete in the next 20 minutes.`,
         'You are an encouraging senior developer mentor. Be direct, specific, and energising. No fluff.'

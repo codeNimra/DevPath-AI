@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',                  // Change to '/devpath-ai/' for GitHub Pages
+  base: '/devpath-ai/',
   build: {
     outDir: 'dist',
     rollupOptions: {
