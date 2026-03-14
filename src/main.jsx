@@ -1,14 +1,11 @@
 import { StrictMode }   from 'react';
 import { createRoot }   from 'react-dom/client';
 
-/* CSS — variables must load before globals */
-import './styles/variables.css';
-import './styles/animations.css';
-import './styles/globals.css';
+/* Single CSS file — all design tokens, animations, and globals combined */
+import './App.css';
 
 import { ThemeProvider } from './context/ThemeContext';
 import { AppProvider }   from './context/AppContext';
-
 import App from './App';
 
 createRoot(document.getElementById('root')).render(

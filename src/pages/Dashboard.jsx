@@ -1,4 +1,14 @@
-import { useState, useEffect } from 'react';
+/**
+ * Dashboard.jsx
+ * ─────────────────────────────────────────────────────────────
+ * Home screen. Shows:
+ *   • Personalized welcome + AI daily brief (if profile set)
+ *   • Four live stat counters
+ *   • Six quick-action cards linking to every main feature
+ * ─────────────────────────────────────────────────────────────
+ */
+
+import { useEffect, useRef } from 'react';
 import { useApp }              from '../context/AppContext';
 import { useClaude }           from '../hooks/useClaude';
 import PageHeader              from '../components/shared/PageHeader';
@@ -8,6 +18,7 @@ import AIResponse              from '../components/ui/AIResponse';
 import { today }               from '../utils/helpers';
 import './Dashboard.css';
 
+/* Quick action card definitions */
 const ACTIONS = [
   { id:'goalsetup',  icon:'◎', title:'Goal Setup',       desc:'Tell Claude your goal — get a personalized week-by-week roadmap.',     accent:'#00E5FF', tag:'Start here'      },
   { id:'roadmap',    icon:'⟶', title:'My Roadmap',        desc:'Your AI learning plan with resources and phase breakdowns.',           accent:'#7B6EFF', tag:'Learning'        },

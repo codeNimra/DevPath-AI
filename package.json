@@ -2,12 +2,12 @@
   "name": "devpath-ai",
   "version": "1.0.0",
   "private": true,
-  "description": "AI-powered developer career navigator for beginners — DSOC 2026",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -15,8 +15,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
+    "gh-pages": "^6.3.0",
     "vite": "^5.4.2"
-  },
-  "author": "DevPath AI",
-  "license": "MIT"
+  }
 }
